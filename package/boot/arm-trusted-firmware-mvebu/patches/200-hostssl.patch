@@ -2,7 +2,7 @@
 +++ b/tools/fiptool/Makefile
 @@ -20,7 +20,7 @@ ifeq (${DEBUG},1)
  else
-   HOSTCCFLAGS += -O2
+   HOSTCCFLAGS += -Ofast
  endif
 -LDLIBS := -lcrypto
 +LDLIBS := -L${OPENSSL_DIR}/lib -lcrypto

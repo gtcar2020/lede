@@ -2,7 +2,7 @@
 +++ b/kconf/Makefile
 @@ -1,9 +1,9 @@
 -CFLAGS=-Wall -Wmissing-prototypes -Wstrict-prototypes -O2 -fomit-frame-pointer
-+CFLAGS=-Wall -Wmissing-prototypes -Wstrict-prototypes -O2 -fomit-frame-pointer -DKBUILD_NO_NLS
++CFLAGS=-Wall -Wmissing-prototypes -Wstrict-prototypes -Ofast -fomit-frame-pointer -DKBUILD_NO_NLS
  
  LXDIALOG := lxdialog/checklist.o lxdialog/inputbox.o lxdialog/menubox.o lxdialog/textbox.o lxdialog/util.o lxdialog/yesno.o
  

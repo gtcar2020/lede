@@ -95,8 +95,8 @@ endif
 GCC_CONFIGURE:= \
 	SHELL="$(BASH)" \
 	$(if $(shell gcc --version 2>&1 | grep -E "Apple.(LLVM|clang)"), \
-		CFLAGS="-O2 -fbracket-depth=512 -pipe" \
-		CXXFLAGS="-O2 -fbracket-depth=512 -pipe" \
+		CFLAGS="-Ofast -fbracket-depth=512 -pipe" \
+		CXXFLAGS="-Ofast -fbracket-depth=512 -pipe" \
 	) \
 	$(HOST_SOURCE_DIR)/configure \
 		--with-bugurl=$(BUGURL) \

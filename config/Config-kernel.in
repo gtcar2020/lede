@@ -1129,7 +1129,7 @@ config KERNEL_SQUASHFS_XATTR
 #
 choice
 	prompt "Compiler optimization level"
-	default KERNEL_CC_OPTIMIZE_FOR_SIZE if SMALL_FLASH
+	default KERNEL_CC_OPTIMIZE_FOR_PERFORMANCE if SMALL_FLASH
 
 config KERNEL_CC_OPTIMIZE_FOR_PERFORMANCE
 	bool "Optimize for performance"
@@ -1148,9 +1148,11 @@ endchoice
 
 config KERNEL_AUDIT
 	bool "Auditing support"
+	default n
 
 config KERNEL_SECURITY
 	bool "Enable different security models"
+	default n
 
 config KERNEL_SECURITY_NETWORK
 	bool "Socket and Networking Security Hooks"
@@ -1164,7 +1166,7 @@ config KERNEL_SECURITY_SELINUX
 config KERNEL_SECURITY_SELINUX_BOOTPARAM
 	bool "NSA SELinux boot parameter"
 	depends on KERNEL_SECURITY_SELINUX
-	default y
+	default n
 
 config KERNEL_SECURITY_SELINUX_DISABLE
 	bool "NSA SELinux runtime disable"
@@ -1173,7 +1175,7 @@ config KERNEL_SECURITY_SELINUX_DISABLE
 config KERNEL_SECURITY_SELINUX_DEVELOP
 	bool "NSA SELinux Development Support"
 	depends on KERNEL_SECURITY_SELINUX
-	default y
+	default n
 
 config KERNEL_SECURITY_SELINUX_SIDTAB_HASH_BITS
 	int

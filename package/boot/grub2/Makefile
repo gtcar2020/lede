@@ -87,7 +87,7 @@ HOST_MAKE_FLAGS += \
 	TARGET_RANLIB=$(TARGET_RANLIB) \
 	LIBLZMA=$(STAGING_DIR_HOST)/lib/liblzma.a
 
-TARGET_CFLAGS := $(filter-out -O2 -O3 -fno-plt,$(TARGET_CFLAGS))
+TARGET_CFLAGS := $(filter-out -Ofast -fno-plt,$(TARGET_CFLAGS))
 
 define Host/Configure
 	$(SED) 's,(RANLIB),(TARGET_RANLIB),' $(HOST_BUILD_DIR)/grub-core/Makefile.in
